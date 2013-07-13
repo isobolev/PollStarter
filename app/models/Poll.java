@@ -14,6 +14,6 @@ public class Poll extends Model {
 
     public String name;
 
-    public List<Option> options;
+    //public List<Option> options;
 
 }

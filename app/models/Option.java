@@ -15,6 +15,8 @@ public class Option extends Model {
 
     public String description;
 
+    public int upCount;
+
     //public String link;
 
     //public String imgURL;
