@@ -2,6 +2,13 @@
 
 @main("PollStarter") {
 
-    @message
+    <script src='@routes.Assets.at("javascripts/index.js")'></script>
+
+    <ul id="polls"></ul>
+
+    <form action="@routes.Application.startPoll()" method="post">
+        <input name="name">
+        <input type="submit">
+    </form>
 
 }
