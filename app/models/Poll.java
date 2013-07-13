@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
@@ -12,6 +13,7 @@ public class Poll extends Model {
     @Id
     public String id;
 
+    @Constraints.Required
     public String name;
 
     //public String description;

@@ -24,10 +24,15 @@ public class Application extends Controller {
     }
 
     public static Result submitPoll() {
-        Poll poll = form(Poll.class).bindFromRequest().get();
-        poll.save();
-
-        return redirect(routes.Application.index());
+        Form<Poll> form = form(Poll.class).bindFromRequest();
+        if (form.hasErrors()) {
+            return badRequest(index.render());
+        }
+        else {
+            Poll poll = form.get();
+            poll.save();
+            return redirect(routes.Application.index());
+        }
     }
 
     public static Result getPoll() {

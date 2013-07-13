@@ -3,7 +3,7 @@
 
 @main("PollStarter") {
 
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <div class="row">
         <div class="offset2">
             @helper.form(action = routes.Application.submitPoll(), 'class -> "form-horizontal") {
@@ -12,10 +12,10 @@
                     <h2 class="">Start new poll</h2>
                 </div>
 
-                @helper.inputText(pollForm("name"), '_label -> "Name")
+                @helper.inputText(pollForm("name"), '_label -> "Name", 'required -> true)
 
                 <div class="controls">
-                    <input type="submit" class="btn btn-success" value="Start"/>
+                    <button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i> Start</button>
                     <a class="btn" href="/">Cancel</a>
                 </div>
             }
