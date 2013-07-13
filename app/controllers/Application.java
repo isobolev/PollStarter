@@ -23,6 +23,15 @@ public class Application extends Controller {
         return ok(createPoll.render(form(Poll.class)));
     }
 
+    public static Result showPoll(Long id) {
+        Form<Poll> pollForm = form(Poll.class).fill(
+                Poll.find.byId(id)
+        );
+        return ok(
+                showPoll.render(id, pollForm)
+        );
+    }
+
     public static Result submitPoll() {
         Form<Poll> form = form(Poll.class).bindFromRequest();
         if (form.hasErrors()) {

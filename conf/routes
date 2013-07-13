@@ -4,9 +4,18 @@
 
 # Home page
 GET     /                            controllers.Application.index()
+
+
+#Create poll
 GET     /poll                        controllers.Application.newPoll()
 POST    /polls                       controllers.Application.submitPoll()
+
+#Show all polls
 GET     /polls                       controllers.Application.getPoll()
+
+#Show poll
+GET     /poll/:id                    controllers.Application.showPoll(id:Long)
+
 
 #Map bootstrap images
 GET     /assets/img/glyphicons-halflings.png            controllers.Assets.at(path="/public", file="/images/glyphicons-halflings.png")
