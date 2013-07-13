@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table option (
-  id                        varchar(255) not null,
+  id                        bigint not null,
   name                      varchar(255),
   description               varchar(255),
   up_count                  integer,
@@ -12,7 +12,7 @@ create table option (
 ;
 
 create table poll (
-  id                        varchar(255) not null,
+  id                        bigint not null,
   name                      varchar(255),
   constraint pk_poll primary key (id))
 ;

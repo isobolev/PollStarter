@@ -11,7 +11,7 @@ import java.util.List;
 public class Poll extends Model {
 
     @Id
-    public String id;
+    public Long id;
 
     @Constraints.Required
     public String name;

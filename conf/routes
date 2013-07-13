@@ -8,10 +8,7 @@ GET     /                            controllers.Application.index()
 
 #Create poll
 GET     /poll                        controllers.Application.newPoll()
-POST    /polls                       controllers.Application.submitPoll()
-
-#Show all polls
-GET     /polls                       controllers.Application.getPoll()
+POST    /poll                        controllers.Application.submitPoll()
 
 #Show poll
 GET     /poll/:id                    controllers.Application.showPoll(id:Long)

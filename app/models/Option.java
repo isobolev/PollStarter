@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Option extends Model {
 
     @Id
-    public String id;
+    public Long id;
 
     public String name;
 

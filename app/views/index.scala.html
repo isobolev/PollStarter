@@ -1,19 +1,23 @@
+@(polls: List[Poll])
+
 @main("PollStarter") {
 
-<script src='@routes.Assets.at("javascripts/index.js")'></script>
+    <script src='@routes.Assets.at("javascripts/index.js")'></script>
 
-<div class="container">
+    <div class="container">
 
-    <h1 class="text-center">List of Polls</h1>
+        <h1 class="text-center">List of Polls</h1>
 
-    <div class="row">
-        <div class="offset2">
-            <ul id="polls" class="tex"></ul>
-
-            <a href="/poll" class="btn btn-success">Start new poll</a>
+        <div class="row">
+            <div class="offset2">
+                <ul id="polls">
+                    @polls.map { poll =>
+                        <li><a href="@routes.Application.showPoll(poll.id)">@poll.name</a></li>
+                    }
+                </ul>
+                <a href="/poll" class="btn btn-success">Start new poll</a>
+            </div>
         </div>
     </div>
-</div>
-
 
 }
