@@ -15,10 +15,14 @@ import static play.libs.Json.toJson;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("PollStarter is ready"));
+        return ok(index.render());
     }
 
-    public static Result startPoll() {
+    public static Result newPoll() {
+        return ok(createPoll.render());
+    }
+
+    public static Result submitPoll() {
         Poll poll = Form.form(Poll.class).bindFromRequest().get();
         poll.save();
 

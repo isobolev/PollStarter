@@ -1,14 +1,10 @@
-@(message: String)
-
 @main("PollStarter") {
 
     <script src='@routes.Assets.at("javascripts/index.js")'></script>
 
+    <h1>List of Polls</h1>
+
     <ul id="polls"></ul>
 
-    <form action="@routes.Application.startPoll()" method="post">
-        <input name="name">
-        <input type="submit">
-    </form>
-
+    <a href="/poll">Start new poll</a>
 }
