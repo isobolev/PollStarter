@@ -10,6 +10,7 @@ import views.html.*;
 
 import java.util.List;
 
+import static play.data.Form.form;
 import static play.libs.Json.toJson;
 
 public class Application extends Controller {
@@ -19,11 +20,11 @@ public class Application extends Controller {
     }
 
     public static Result newPoll() {
-        return ok(createPoll.render());
+        return ok(createPoll.render(form(Poll.class)));
     }
 
     public static Result submitPoll() {
-        Poll poll = Form.form(Poll.class).bindFromRequest().get();
+        Poll poll = form(Poll.class).bindFromRequest().get();
         poll.save();
 
         return redirect(routes.Application.index());
