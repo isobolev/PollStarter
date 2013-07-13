@@ -1,0 +1,26 @@
+@(optionForm: Form[Option], id : Long)
+@implicitFieldConstructor = @{ helper.FieldConstructor(twitterBootstrapInput.render) }
+
+@main("PollStarter") {
+
+<div class="container">
+    <div class="row">
+        <div class="offset2">
+            @helper.form(action = routes.Application.submitOption(id), 'class -> "form-horizontal") {
+
+            <div class="controls">
+                <h2 class="">Add option</h2>
+            </div>
+
+            @helper.inputText(optionForm("name"), '_label -> "Name", 'required -> true)
+
+            <div class="controls">
+                <button type="submit" class="btn btn-success"><i class="icon-ok icon-white"></i> add</button>
+                <a class="btn" href="/">Cancel</a>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+}

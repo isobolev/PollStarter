@@ -44,4 +44,19 @@ public class Application extends Controller {
         }
     }
 
+
+    public static Result submitOption(Long id){
+        Poll poll = Poll.find.byId(id);
+
+        Option option = form(Option.class).bindFromRequest().get();
+        Option.create(option, id);
+
+        return redirect(routes.Application.showPoll(id));
+    }
+
+    public static Result addOption(Long id)          {
+        return ok(createOption.render(form(Option.class), id));
+    }
+
+
 }

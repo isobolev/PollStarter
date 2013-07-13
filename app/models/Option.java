@@ -35,5 +35,23 @@ public class Option extends Model {
     /**
      * Generic query helper for entity Computer with id Long
      */
-    public static Model.Finder<Long,Option> find = new Model.Finder(Long.class, Option.class);
+    public static Model.Finder<Long, Option> find = new Model.Finder(Long.class, Option.class);
+
+    public static Option create(Option option, Long pollID) {
+        option.poll = Poll.find.byId(pollID);
+        option.upCount = 0;
+        checkID(option);
+
+        option.save();
+        return option;
+    }
+
+    public static void checkID(Option option) {
+        if (Option.find.byId(option.id) != null) {
+            //Hackathon hardcode :)
+            option.id += 10;
+            checkID(option);
+        }
+    }
+
 }

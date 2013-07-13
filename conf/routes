@@ -14,6 +14,10 @@ POST    /poll                        controllers.Application.submitPoll()
 GET     /poll/:id                    controllers.Application.showPoll(id:Long)
 
 
+#Create option
+GET     /option                     controllers.Application.addOption(id:Long)
+POST    /option                     controllers.Application.submitOption(id:Long)
+
 #Map bootstrap images
 GET     /assets/img/glyphicons-halflings.png            controllers.Assets.at(path="/public", file="/images/glyphicons-halflings.png")
 GET     /assets/img/glyphicons-halflings-white.png      controllers.Assets.at(path="/public", file="/images/glyphicons-halflings-white.png")
