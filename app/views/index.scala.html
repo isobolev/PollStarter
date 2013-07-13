@@ -11,7 +11,7 @@
                 <table class="table" id="polls">
                     @polls.map { poll =>
                         <tr>
-                            <td><a href="@routes.Application.showPoll(poll.id)">@poll.name</a></td>
+                            <td><h4><a href="@routes.Application.showPoll(poll.id)">@poll.name</a></h4></td>
                         </tr>
                     }
                 </table>
