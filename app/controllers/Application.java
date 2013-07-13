@@ -45,7 +45,7 @@ public class Application extends Controller {
     }
 
 
-    public static Result submitOption(Long id){
+    public static Result submitOption(Long id) {
         Poll poll = Poll.find.byId(id);
 
         Option option = form(Option.class).bindFromRequest().get();
@@ -54,9 +54,15 @@ public class Application extends Controller {
         return redirect(routes.Application.showPoll(id));
     }
 
-    public static Result addOption(Long id)          {
+    public static Result addOption(Long id) {
         return ok(createOption.render(form(Option.class), id));
     }
 
+    public static Result upOption(Long id) {
+        Option option = Option.find.byId(id);
+        option.upCount++;
+        option.update();
+        return redirect(routes.Application.showPoll(option.poll.id));
+    }
 
 }
