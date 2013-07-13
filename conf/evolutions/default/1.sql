@@ -6,7 +6,7 @@
 create table option (
   id                        bigint not null,
   name                      varchar(255),
-  description               varchar(255),
+  poll_id                   bigint,
   up_count                  integer,
   constraint pk_option primary key (id))
 ;
@@ -21,6 +21,8 @@ create sequence option_seq;
 
 create sequence poll_seq;
 
+alter table option add constraint fk_option_poll_1 foreign key (poll_id) references poll (id) on delete restrict on update restrict;
+create index ix_option_poll_1 on option (poll_id);
 
 
 

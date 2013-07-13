@@ -1,16 +1,20 @@
-@(id: Long, pollForm: Form[Poll])
+@(poll: Poll, options: List[Option])
 
 @main("PollStarter") {
 
 <div class="container">
 
-    <h1 class="text-center">options</h1>
+    <h1 class="text-center">@poll.name</h1>
 
     <div class="row">
         <div class="offset2">
-            <ul id="options" class="tex"></ul>
+            <ul id="options">
+                @options.map { option =>
+                    <li>@option.name</li>
+                }
+            </ul>
 
-            <a href="/poll" class="btn btn-success">add option</a>
+            <a href="#" class="btn btn-success">add option</a>
         </div>
     </div>
 </div>

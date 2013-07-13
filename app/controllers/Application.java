@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Option;
 import models.Poll;
 import play.*;
 import play.data.Form;
@@ -27,12 +28,8 @@ public class Application extends Controller {
     }
 
     public static Result showPoll(Long id) {
-        Form<Poll> pollForm = form(Poll.class).fill(
-                Poll.find.byId(id)
-        );
-        return ok(
-                showPoll.render(id, pollForm)
-        );
+        Poll poll = Poll.find.byId(id);
+        return ok(showPoll.render(poll, Option.findByPoll(id)));
     }
 
     public static Result submitPoll() {
