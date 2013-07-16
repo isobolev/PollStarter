@@ -5,7 +5,6 @@
 # Home page
 GET     /                            controllers.Application.index()
 
-
 #Create poll
 GET     /poll                        controllers.Application.newPoll()
 POST    /poll                        controllers.Application.submitPoll()
@@ -13,14 +12,12 @@ POST    /poll                        controllers.Application.submitPoll()
 #Show poll
 GET     /poll/:id                    controllers.Application.showPoll(id:Long)
 
-
 #Create option
 GET     /option                     controllers.Application.addOption(id:Long)
 POST    /option                     controllers.Application.submitOption(id:Long)
 
 #Update option
-#PUT     /option/:id                 controllers.Application.updateOption(id:Long)
-GET     /poll/option/up/:id              controllers.Application.upOption(id:Long)
+GET     /poll/option/up/:id         controllers.Application.upOption(id:Long)
 
 #Map bootstrap images
 GET     /assets/img/glyphicons-halflings.png            controllers.Assets.at(path="/public", file="/images/glyphicons-halflings.png")

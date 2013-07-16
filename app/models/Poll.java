@@ -16,12 +16,11 @@ public class Poll extends Model {
     @Constraints.Required
     public String name;
 
+    //TODO add description to model
     //public String description;
-
-    //public List<Option> options;
 
     /**
      * Generic query helper for entity Computer with id Long
      */
-    public static Finder<Long,Poll> find = new Finder<Long,Poll>(Long.class, Poll.class);
+    public static Finder<Long, Poll> find = new Finder<Long, Poll>(Long.class, Poll.class);
 }

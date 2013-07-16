@@ -20,6 +20,7 @@ public class Option extends Model {
 
     public int upCount;
 
+    //TODO add description, link, image to model
     //public String description;
 
     //public String link;
